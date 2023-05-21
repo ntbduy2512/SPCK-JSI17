@@ -101,25 +101,37 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
   padding: 10px;
-  border-radius: 10px;
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
   right: 10px;
   position: absolute;
   border: solid 2px blue;
 }
 
-.inputs{
-  justify-content: center;
-  align-items: center;
-  padding: auto;
-  margin-bottom: 10px;
+.form h1{
+  color: #eee;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin-top: 30px;
+  font-size: 36px;
+  padding: 0px;
+  margin-bottom: 0;
 }
 
 .input{
-  margin: 0px auto 5px auto;
-  padding: auto;
-  width: 97%;
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  margin-top: 20px;
 }
 .form p{
   margin: auto 0px auto 0px;
@@ -129,10 +141,16 @@ body{
   padding: 5px;
 }
 .inputs button{
-  margin: 0px auto;
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
   width: 100%;
-  background-color: #3c4fe0;
-  color: #fff;
-  border: solid 2px white;
-  padding: 5px  ;
 }

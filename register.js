@@ -2,7 +2,6 @@ import Login from './login.js';
 import app from './index.js';
 
 
-
 class Register{
     $containerDiv
     $titleHeader

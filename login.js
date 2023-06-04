@@ -1,5 +1,7 @@
 import app from "./index.js";
-import Register from "./register.js";
+import Register from "../register.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
 class Login {
     $containerDiv
     $titleHeader
@@ -65,12 +67,13 @@ class Login {
             return
         }
 
+
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            // ...
+            document.location.href = "client/index.html"
           })
           .catch((error) => {
             const errorCode = error.code;

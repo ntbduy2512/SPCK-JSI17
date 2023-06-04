@@ -1,5 +1,7 @@
 import Login from './login.js';
 import app from './index.js';
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
 
 
 class Register{
@@ -28,7 +30,7 @@ class Register{
 
         this.$confirmPassInputPass = document.createElement("input");
         this.$confirmPassInputPass.type = "password";
-        this.$confirmPassInputPass.placeholder = "Confirm your name";
+        this.$confirmPassInputPass.placeholder = "Confirm your password";
 
         this.$subimtBtn = document.createElement("button");
         this.$subimtBtn.type = "submit";
@@ -99,18 +101,19 @@ class Register{
             return
         }
 
+
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
-         .then((userCredential) => {
-          // Signed in 
-           const user = userCredential.user;
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
+          .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            document.location.href = "client/index.html"
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+          });
     };
 
     gotoSignin = () => {
@@ -119,6 +122,8 @@ class Register{
         app.changeActiveScreen(login);
     };
 }
+
+
 
 
 export default Register;

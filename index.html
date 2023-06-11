@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app"></div>
+
     <div class="navbar">
         <h4 id="name"> Family book</h4>
         <img class="image" src="./photo/happy-family-3668405-3054071.webp" alt="img">
@@ -19,11 +20,11 @@
     <div class="form">
         <h1>Add a member</h1>
         <div class="inputs">
-            <input class="input" type="text" placeholder="Name">
-            <input class="input" type="text" placeholder="Birthday">
-            <input class="input" type="text" placeholder="Gender">
-            <input class="input" type="file">
-            <button>Submit</button>
+            <input class="input" type="text" id="Name" placeholder="Name">
+            <input class="input" type="text" id="birthday" placeholder="Birthday">
+            <input class="input" type="text" id="gender" placeholder="Gender">
+            <input class="input" id="image" type="file">
+            <button id="submit" onclick="handleSubmit()">Submit</button>
         </div>
     </div>
     <div class="footer">
@@ -60,6 +61,6 @@
 
         
     </div>
-
+    <script src="./home.js"></script>
 </body>
 </html>

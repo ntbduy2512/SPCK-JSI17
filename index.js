@@ -1,5 +1,6 @@
 import Login from "./login.js";
 
+
 class App{
     activeScreen
     container
@@ -26,5 +27,8 @@ const login = new Login();
 const app = new App (container);
 container.onclick = app.changeActiveScreen(login);
 app.changeActiveScreen(login);
+
+
+
 
 export default app;

@@ -1,6 +1,5 @@
 import Login from "./login.js";
 
-
 class App{
     activeScreen
     container
@@ -28,6 +27,9 @@ const app = new App (container);
 container.onclick = app.changeActiveScreen(login);
 app.changeActiveScreen(login);
 
+export const user = await login.getUser();
+
+console.log(login.getUser());
 
 
 

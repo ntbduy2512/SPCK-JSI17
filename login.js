@@ -10,7 +10,7 @@ class Login {
     $passInputPass
     $submitBtn
     $gotoSignupLink
-
+    $user
 
     constructor() {
         this.$emailInputEmail = document.createElement("input");
@@ -67,19 +67,24 @@ class Login {
             return
         }
 
-
+        
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed in 
-            const user = userCredential.user;
-            document.location.href = "client/index.html"
+            this.$user = userCredential.user;
+            document.location.href = "/index.html"
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
           });
+          console.log(this.getUser())
     };
+
+    getUser = () => {
+        return this.$user;
+    }
 
     gotoSignup = () => {
         const signup = new Register();

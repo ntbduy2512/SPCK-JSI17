@@ -1,8 +1,9 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-lite.js";
-  // TODO: Add SDKs for Firebase products that you want to use
+  import { getFirestore, collection, getDocs, addDoc, getDoc, deleteDoc, doc} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
@@ -19,5 +20,16 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  export const firebase = initializeApp(firebaseConfig);
+
+  // khai bao bang du lieu
+  export const firestore = getFirestore(firebase);
+
+  const getData = async (db) => {
+    const querySnapshot = await getDocs(collection(firestore, "birthdays"));
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });
+
+}
+console.log(await getData(firestore));
